@@ -1,8 +1,9 @@
+import { REACT_APP_API_BASE_URL} from '../config';
 
 export const fetchCheeses = () => dispatch => {
   dispatch(fetchCheesesRequest());
 
-  fetch('http://localhost:8080/api/cheeses')
+  fetch(`${REACT_APP_API_BASE_URL}/cheeses`)
     .then(res => {
       if(!res.ok) {
         return Promise.reject(res.statusText)

@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
-import CheeseList from './components/CheeseList'
+import { Provider } from 'react-redux';
+
 import registerServiceWorker from './registerServiceWorker';
+import CheeseList from './components/CheeseList'
+import store from './store';
+
+import './index.css';
+
 
 ReactDOM.render(
-  <CheeseList cheeses={["Bath Blue", "Barkham Blue", "Buxton Blue"]} />,
+  <Provider store={store} >
+    <CheeseList />
+  </Provider>,
   document.getElementById('root'));
 
 registerServiceWorker();

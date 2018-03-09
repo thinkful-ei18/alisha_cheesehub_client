@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class CheeseList extends Component {
-  // this.props: cheeses={["Bath Blue", "Barkham Blue", "Buxton Blue"]}
+export class CheeseList extends Component {
 
   render() {
-    const cheeseList = this.props.cheeses.map(cheese => <li>{cheese}</li>)
+    const cheeseList = this.props.cheeses.map((cheese, index) => (
+      <li key={index}>
+        {cheese}
+      </li>
+    ))
 
     return(
       <div>
@@ -15,3 +19,9 @@ export default class CheeseList extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  cheeses: state.cheeses
+})
+
+export default connect(mapStateToProps)(CheeseList) 

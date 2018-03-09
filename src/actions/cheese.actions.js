@@ -1,6 +1,5 @@
-import React from 'react';
 
-const fetchCheeses = () => dispatch => {
+export const fetchCheeses = () => dispatch => {
   dispatch(fetchCheesesRequest());
   fetch('/api/cheeses')
     .then(res => {

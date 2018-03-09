@@ -6,10 +6,11 @@ import { fetchCheeses } from '../actions/cheese.actions'
 export class CheeseList extends Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchCheeses);
+    this.props.dispatch(fetchCheeses());
   }
 
   render() {
+
     const cheeseList = this.props.cheeses.map((cheese, index) => (
       <li key={index}>
         {cheese}

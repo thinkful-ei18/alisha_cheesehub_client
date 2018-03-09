@@ -1,7 +1,8 @@
 
 export const fetchCheeses = () => dispatch => {
   dispatch(fetchCheesesRequest());
-  fetch('/api/cheeses')
+
+  fetch('http://localhost:8080/api/cheeses')
     .then(res => {
       if(!res.ok) {
         return Promise.reject(res.statusText)

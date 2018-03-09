@@ -1,7 +1,7 @@
 import * as actions from '../actions/cheese.actions'
 
 const initialState = {
-  cheeses: ['gouda'],
+  cheeses: [],
   loading: false,
   error: null
 }
